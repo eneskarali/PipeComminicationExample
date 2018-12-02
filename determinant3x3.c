@@ -18,8 +18,8 @@ int main(void)
         int kofakRes = 0;     //program her calistiginda donen degeri tutar
         int totalRes = 0;     //donen kofak degerlerinin toplamı tutulur
 
-        printf("------------------------------------------");
-        printf("\n3x3 Bir Matris Olusturunuz\n\n");
+        printf("------------------------------------------\n");
+        printf("3x3 Bir Matris Olusturunuz\n\n");
         int inputForIndex = 0;
         for (inputForIndex = 0; inputForIndex < 3; inputForIndex++)
         {
@@ -169,20 +169,6 @@ int main(void)
         }
         close(p[0]);
         close(p[1]);
-
-        char isItContinue[2];
-
-        printf("Yeni işlem yapmak istiyor musunuz: [e/y]  =  ");
-        fgets(isItContinue, 2, stdin);
-
-        if (strcmp(isItContinue, "e") == 0)
-        {
-            continue;
-        }
-        else
-        {
-            break;
-        }
     }
     return 0;
 }
