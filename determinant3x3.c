@@ -103,7 +103,7 @@ int main(void)
                     int po = 0;
                     po = (secProgValue + 1) + (u + 1); //ust degerini tutar
                     write(p[1], &po, sizeof(int));     // ust degerini pipe a yazar
-                    c = execv("ko", NULL);             //kofaktor hesabı yapan programı calistirir
+                    c = execv("kofaktor", NULL);       //kofaktor hesabı yapan programı calistirir
                     perror("exec kofaktor error: ");
                     exit(0);
                 }
@@ -153,7 +153,7 @@ int main(void)
                     int po = 0;
                     po = ((secProgValue % 3) + 1) + (u + 1); //ust degerini hesapla
                     write(p[1], &po, sizeof(int));           //ust degerini pipe a yaz
-                    c = execv("ko", NULL);                   //kofaktor hesabı yapan programı calistir
+                    c = execv("kofaktor", NULL);             //kofaktor hesabı yapan programı calistir
                     perror("exec kofaktor error: ");
                     exit(0);
                 }
@@ -169,6 +169,20 @@ int main(void)
         }
         close(p[0]);
         close(p[1]);
+
+        char isItContinue[2];
+
+        printf("Yeni işlem yapmak istiyor musunuz: [e/y]  =  ");
+        fgets(isItContinue, 2, stdin);
+
+        if (strcmp(isItContinue, "e") == 0)
+        {
+            continue;
+        }
+        else
+        {
+            break;
+        }
     }
     return 0;
 }
